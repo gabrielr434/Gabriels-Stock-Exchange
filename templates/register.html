@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Register{% endblock %}
+{% block main %}
+    <div class="card-terminal mx-auto" style="max-width: 380px;">
+        <h1 class="h4 mb-4">Create your account</h1>
+        <form action="/register" method="post" autocomplete="off">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control form-control-terminal w-100" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-terminal w-100" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-terminal w-100" name="confirmation" placeholder="Confirm Password" type="password">
+            </div>
+            <button class="btn btn-cyber w-100" type="submit">Register</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}Sell{% endblock %}
+{% block main %}
+    <div class="card-terminal mx-auto" style="max-width: 380px;">
+        <h1 class="h4 mb-4">Sell shares</h1>
+        <form action="/sell" method="post" autocomplete="off">
+            <div class="mb-3">
+                <select class="form-select form-select-terminal w-100" name="symbol">
+                    <option value="" selected disabled>Select a stock</option>
+                    {% for holding in holdings %}
+                    <option value="{{ holding.symbol }}">{{ holding.symbol }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-terminal w-100" name="shares" placeholder="Shares" type="text">
+            </div>
+            <button class="btn btn-cyber w-100" type="submit">Sell</button>
+        </form>
+    </div>
+{% endblock %}

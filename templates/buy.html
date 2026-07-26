@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block title %}Buy{% endblock %}
+{% block main %}
+    <div class="card-terminal mx-auto" style="max-width: 380px;">
+        <h1 class="h4 mb-4">Buy shares</h1>
+        <form action="/buy" method="post" autocomplete="off">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control form-control-terminal w-100" name="symbol" placeholder="Symbol" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control form-control-terminal w-100" name="shares" placeholder="Shares" type="text">
+            </div>
+            <button class="btn btn-cyber w-100" type="submit">Buy</button>
+        </form>
+    </div>
+{% endblock %}
