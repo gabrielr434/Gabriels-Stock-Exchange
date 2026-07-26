@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Portfolio{% endblock %}
+{% block main %}
+    <div class="card-terminal mx-auto" style="max-width: 900px;">
+        <table class="table table-terminal">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Shares</th>
+                    <th>Price</th>
+                    <th>Total Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in portfolio %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.shares }}</td>
+                    <td>{{ stock.price | usd }}</td>
+                    <td>{{ stock.total | usd }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between mt-4 px-2">
+            <div>
+                <div class="stat-label">Cash</div>
+                <div class="stat-value">{{ cash | usd }}</div>
+            </div>
+            <div>
+                <div class="stat-label">Grand Total</div>
+                <div class="stat-value">{{ grand_total | usd }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

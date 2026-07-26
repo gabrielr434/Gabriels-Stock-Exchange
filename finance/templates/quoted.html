@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}Quoted{% endblock %}
+{% block main %}
+    <div class="card-terminal mx-auto" style="max-width: 420px;">
+        <div class="stat-label mb-1">{{ quote.symbol }}</div>
+        <div class="stat-value mb-2">{{ quote.name }}</div>
+        <div class="stat-value">{{ quote.price | usd }}</div>
+    </div>
+{% endblock %}
